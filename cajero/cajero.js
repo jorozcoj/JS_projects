@@ -7,6 +7,7 @@ class billete {
 
 var caja = [];
 var entregados = [];
+var billeteDiez = 0;
 
 function entregarDinero() {
   var t = document.getElementById("dinero");
@@ -25,7 +26,11 @@ function entregarDinero() {
       dinero = dinero - bi.valor * papeles;
     }
   }
-  if (dinero > 0) {
+  if (dinero % 10 !== 0 && dinero > 0) {
+    resultado.innerHTML = "Ingrese un valor correcto";
+    return;
+  }
+  if (dinero > 0 && dinero % 10 === 0) {
     resultado.innerHTML = "No hay dinero suficiente";
   } else {
     for (var e of entregados)
@@ -35,7 +40,6 @@ function entregarDinero() {
       }
   }
 }
-
 caja.push(new billete(50, 3));
 caja.push(new billete(20, 2));
 caja.push(new billete(10, 2));
