@@ -26,21 +26,17 @@ app.get("/:id", (req, res) => {
   });
 });
 
-/* app.put("/:id", (req, res) => {
-  const user = Service.getUser(req.params.id);
-  let {params: { id }} = req;
-  let { body: newUpdater } = req;
-  if (user.length == 0) {
-    res.status(404).send(`Usuario con id ${req.params.id} no existe`);
-  } else {
-    const result = Service.validatos(req.body);
-    if (result.error) {
-      res.status(400).send(result.error.details[0].message);
-    } else {
-      res.send(Service.updateUser(id, newUpdater));
-    }
-  }
-}); */
+/* 
+app.put("/:id", (req, res) => {
+    let identificador = req.params.id;
+    let { body: updateData } = req;
+    let usuario =  Services.updateUser(identificador, updateData);
+    res.json({
+      message: `Usuario id ${identificador}, actualizado`,
+      body: usuario,
+    });
+  });
+ */
 
 //Elimina un usuario
 app.delete("/:id", (req, res) => {
