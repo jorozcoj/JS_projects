@@ -1,0 +1,8 @@
+//modulo que ayuda a traer todas las variables en el arcivo que necesitemos
+require('dotenv').config();
+
+module.exports.Config ={
+    port: process.env.PORT,
+    mongoUri:process.env.MONGO_URI,
+    mongoDBname:process.env.MONGO_DBNAME,
+}
