@@ -8,6 +8,7 @@ const app = express();
 
 app.use(express.json());
 
+//se agregan los modulos
 ProductsAPI(app);
 
 app.listen(Config.port, () => {
