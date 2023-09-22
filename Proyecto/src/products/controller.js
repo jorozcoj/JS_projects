@@ -43,6 +43,23 @@ module.exports.ProductsController = {
       Response.error(res);
     }
   },
+  //update
+  //Delete
+  deleteProduct: async(req, res) => {
+    try {
+      const { body } = req;
+      if (!body || Object.keys(body).length === 0) {
+        Response.error(res, new createError.BadRequest());
+      } else {
+        const deletedId = await ProductsService.deleteProduct(body);
+        Response.success(res, 201, "Producto eliminado", deletedId);
+      ProductsService.deleteProduct(body)
+      }
+    } catch (error) {
+      debug(error);
+      Response.error(res);
+    }
+  },
 
   generateReport: (req, res) => {
     try {

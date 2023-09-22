@@ -11,6 +11,10 @@ module.exports.ProductsAPI = (app) => {
     .get("/report",ProductsController.generateReport) //http://localhost:3000/api/products/report
     .get("/:id", ProductsController.getProduct) //http://localhost:3000/api/products/23
     .post("/", ProductsController.createProduct)
+    .delete("/id:",ProductsController.deleteProduct)
+
+    //update
+    //delete
 //concatena cada una de las rutas con las que se tienen anteriormente "/"
   app.use("/api/products", router);
 };

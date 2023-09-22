@@ -21,6 +21,14 @@ const create = async (product) => {
   return result.insertedId;
 };
 
+//update
+
+//delete
+const deleteProduct = async (product) => {
+    const collection = await Database(COLLECTION);
+    return collection.deleteOne({_id: (product)});
+  };
+
 const generateReport =async(name,res)=>{
     let products = await getAll();
     ProductsUtils.excelGenerator(products,name,res)
@@ -30,5 +38,6 @@ module.exports.ProductsService = {
   getAll,
   getById,
   create,
-  generateReport
+  generateReport,
+  deleteProduct
 };
