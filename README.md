@@ -4,4 +4,3 @@ Un repositorio con algunos proyectos en los que he estado trabajando usando como
 La carpeta JS_projecto contiene los siguientes proyectos:
 -cajero
 -granja-
--primerServidor: el primer archivo que subo utilizando node 
