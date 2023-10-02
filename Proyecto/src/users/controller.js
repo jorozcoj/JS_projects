@@ -6,7 +6,7 @@ const { Response } = require("../common/response");
 module.exports.UsersController = {
   getUsers: async (req, res) => {
     try {
-      let products = await UsersService.getAll();
+      let users = await UsersService.getAll();
       Response.success(res, 200, "Lista de Usuarios", users);
     } catch (error) {
       debug(error);
@@ -53,7 +53,7 @@ module.exports.UsersController = {
         Response.error(res, new createError.BadRequest());
       } else {
         const deletedId = await UsersService.deleteUser(body);
-        Response.success(res, 201, "Producto eliminado", deletedId);
+        Response.success(res, 201, "usuario eliminado", deletedId);
       UsersService.deleteUser(body)
       }
     } catch (error) {

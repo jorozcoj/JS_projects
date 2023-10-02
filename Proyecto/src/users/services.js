@@ -15,9 +15,9 @@ const getById = async (id) => {
 };
 
 //crea un nuevo producto en nuestra bd
-const create = async (product) => {
+const create = async (user) => {
   const collection = await Database(COLLECTION);
-  let result = await collection.insertOne(product);
+  let result = await collection.insertOne(user);
   return result.insertedId;
 };
 

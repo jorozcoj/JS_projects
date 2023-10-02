@@ -2,6 +2,7 @@ const debug = require("debug")("app:module-products-controller");
 const createError = require("http-errors");
 const { ProductsService } = require("./services");
 const { Response } = require("../common/response");
+
 module.exports.ProductsController = {
   getProducts: async (req, res) => {
     try {
